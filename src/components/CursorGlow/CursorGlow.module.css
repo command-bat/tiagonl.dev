@@ -1,0 +1,26 @@
+.cursor {
+  position: fixed;
+
+  width: 280px;
+
+  height: 280px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124,58,237,0.12),
+      transparent 35%
+    );
+
+  z-index: -1;
+
+  transform:
+    translate(-50%, -50%);
+
+  transition:
+    transform 0.18s ease-out;
+}

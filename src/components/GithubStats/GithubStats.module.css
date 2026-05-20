@@ -1,0 +1,12 @@
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.stats img {
+  border-radius: 20px;
+  width: 500px;
+  max-width: 100%;
+}

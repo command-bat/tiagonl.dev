@@ -1,0 +1,159 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.06);
+  border-bottom: 1px solid var(--border);
+  z-index: 9999;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 8px 14px;
+
+  border-radius: 16px;
+
+  border: 1px solid var(--border);
+
+  background: var(--card);
+
+  transition: 0.3s;
+}
+
+.logoArea:hover {
+  border-color: var(--primary);
+
+  transform: translateY(-3px);
+}
+
+.logoArea span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header nav a {
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+}
+
+.header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+.header nav a:hover::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.actions a,
+.actions button {
+  width: 45px;
+  height: 45px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.actions a:hover,
+.actions button:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.mobileButton {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .mobileButton {
+    display: flex !important;
+
+    width: 45px;
+    height: 45px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    color: var(--text);
+
+    cursor: pointer;
+  }
+
+  .header nav {
+    position: fixed;
+
+    top: 60px;
+
+    left: 0;
+
+    width: 100%;
+
+    background: var(--bgSecondary);
+
+    transition:
+      background 0.4s ease,
+      color 0.4s ease;
+
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+
+    flex-direction: column;
+
+    padding: 40px;
+
+    transform: translateY(-120%);
+
+    transition: 0.3s;
+  }
+
+  .header nav.open {
+    transform: translateY(0);
+    top: 80px;
+  }
+
+  .header nav a {
+    font-size: 1.2rem;
+  }
+}

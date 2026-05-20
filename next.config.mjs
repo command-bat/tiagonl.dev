@@ -1,6 +1,9 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-};
+  images: {
+    domains: [
+      'github-readme-stats.vercel.app'
+    ]
+  }
+}
 
-export default nextConfig;
+export default nextConfig

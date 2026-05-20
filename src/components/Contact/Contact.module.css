@@ -1,0 +1,34 @@
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  padding: 40px;
+  border-radius: 25px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+}
+
+.card svg {
+  font-size: 3rem;
+  color: var(--primary);
+}

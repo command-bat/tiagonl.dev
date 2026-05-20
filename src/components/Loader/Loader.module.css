@@ -1,0 +1,32 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.loader h1 {
+  color: var(--primary);
+  font-size: 4rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+}

@@ -1,0 +1,70 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 7rem;
+  line-height: 0.95;
+  display: flex;
+    flex-direction: row;
+    gap: 30px
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero h1 b {
+  animation: blink 0.7s infinite;
+}
+
+.hero p {
+  margin-top: 30px;
+  max-width: 700px;
+  font-size: 1.2rem;
+  color: var(--textSoft);
+  line-height: 1.7;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  padding: 12px 22px;
+  border-radius: 999px;
+  margin-bottom: 30px;
+  background: rgba(255,255,255,0.03);
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.buttons a {
+  padding: 16px 28px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  transform: translateY(-5px);
+}
+
+.cv {
+  background: #0000000d !important;
+  border: 1px solid var(--border);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,22 @@
+.about {
+  display: flex;
+  justify-content: center;
+}
+
+.about div {
+  max-width: 900px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 50px;
+  border-radius: 30px;
+}
+
+.about h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.about p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
