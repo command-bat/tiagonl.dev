@@ -1,0 +1,14 @@
+{
+    "title": "Palpites.bat",
+    "description": "Sistema moderno de palpites esportivos.",
+    "fullDescription": "Projeto completo com autenticação, ranking, partidas e realtime.",
+    "image": "/projects/palpites.png",
+    "site": "https://palpites.commandbat.com.br",
+    "github": "https://github.com/command-bat/palpites.bat",
+    "tags": [
+        "Node.js",
+        "React",
+        "Firebase",
+        "API"
+    ]
+}

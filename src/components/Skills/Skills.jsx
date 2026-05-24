@@ -1,4 +1,6 @@
-import styles from './Skills.module.css'
+"use client";
+
+import styles from "./Skills.module.css";
 
 import {
   FaJs,
@@ -7,65 +9,87 @@ import {
   FaPython,
   FaGitAlt,
   FaBootstrap,
-  FaPlus
-} from 'react-icons/fa'
+  FaPlus,
+} from "react-icons/fa";
 
-import { TbBrandOffice } from 'react-icons/tb'
+import { TbBrandOffice } from "react-icons/tb";
 
 const skills = [
   {
     icon: <FaJs />,
-    name: 'JavaScript'
+    name: "JavaScript",
+    filter: "JavaScript",
   },
   {
     icon: <FaNodeJs />,
-    name: 'Node.js'
+    name: "Node.js",
+    filter: "Node.js",
   },
   {
     icon: <FaReact />,
-    name: 'React'
+    name: "React",
+    filter: "React",
   },
   {
     icon: <FaPython />,
-    name: 'Python'
+    name: "Python",
+    filter: "Python",
   },
   {
     icon: <FaGitAlt />,
-    name: 'Git/GitHub'
+    name: "Git/GitHub",
+    filter: null,
   },
   {
     icon: <FaBootstrap />,
-    name: 'Bootstrap'
+    name: "Bootstrap",
+    filter: "Bootstrap",
   },
   {
     icon: <TbBrandOffice />,
-    name: 'Pacote Office'
+    name: "Pacote Office",
+    filter: null,
   },
   {
     icon: <FaPlus />,
-    name: 'Aprendendo coisas novas'
-  }
-]
+    name: "Aprendendo coisas novas",
+    filter: null,
+  },
+];
 
 export default function Skills() {
+  function handleFilter(skill) {
+    if (!skill.filter) return;
+
+window.dispatchEvent(
+  new CustomEvent("filter-projects", {
+    detail: {
+      type: "replace",
+      filters: [skill.filter],
+    },
+  }),
+);
+  }
+
   return (
     <section id="skills">
-      <h2 className={styles.title}>
-        Skills & Tecnologias
-      </h2>
+      <h2 className={styles.title}>Skills & Tecnologias</h2>
 
       <div className={styles.grid}>
         {skills.map((skill, index) => (
           <div
             className={styles.card}
             key={index}
+            onClick={() => handleFilter(skill)}
           >
             {skill.icon}
 
             <span>{skill.name}</span>
+
+            {/* {skill.filter && <small>filtrar projetos</small>} */}
           </div>
         ))}
       </div>
     </section>
-  )
+  );
 }

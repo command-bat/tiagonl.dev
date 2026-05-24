@@ -1,23 +1,42 @@
 .footer {
-  padding: 80px 10%;
+  position: relative;
+
+  padding: 100px 10%;
 
   text-align: center;
 
-  border-top: 1px solid var(--border);
+  /* border-top: 1px solid var(--border); */
 
-  background: transparent;
+  overflow: hidden;
+}
 
-  color: var(--text);
+.footer::before {
+  content: '';
 
-  transition:
-    background 0.4s ease,
-    color 0.4s ease;
+  position: absolute;
+
+  inset: 0;
+
+  background: RGBA(124,58,237,0.10);
+  background: linear-gradient(0deg,rgba(124,58,237,0.10) 80%, rgba(0, 0, 0, 0) 100%);
+
+  pointer-events: none;
+}
+
+.footer span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--textSoft);
+
+  font-size: 0.9rem;
 }
 
 .footer h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .footer p {

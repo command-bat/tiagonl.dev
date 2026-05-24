@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+
 import Navbar from '@/components/Navbar/Navbar'
 import Hero from '@/components/Hero/Hero'
 import About from '@/components/About/About'
@@ -12,15 +16,23 @@ import CursorGlow from '@/components/CursorGlow/CursorGlow'
 import Loader from '@/components/Loader/Loader'
 
 export default function Home() {
+  const [loading, setLoading] =
+    useState(true)
+
+  const [hasProjects, setHasProjects] =
+    useState(false)
+
   return (
     <>
-      <Loader />
+      <Loader loading={loading} />
 
       <CursorGlow />
 
       <Background />
 
-      <Navbar />
+      <Navbar
+        hasProjects={hasProjects}
+      />
 
       <main>
         <Hero />
@@ -29,7 +41,15 @@ export default function Home() {
 
         <Skills />
 
-        <Projects />
+        <Projects
+          onLoaded={() =>
+            setLoading(false)
+          }
+
+          onProjectsChange={
+            setHasProjects
+          }
+        />
 
         <Experience />
 

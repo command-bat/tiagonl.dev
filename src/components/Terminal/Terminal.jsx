@@ -90,12 +90,21 @@ export default function Terminal() {
   function handleCommand(cmd) {
     const commands = {
       help: `
-about
-skills
-contact
-social
-curriculo
-clear
+ABOUT         Exibe informacoes sobre mim
+SKILLS        Exibe as skills que eu domino
+CONTACT       Exibe as informacoes de contato
+SOCIAL        Exibe as minhas rede sociais
+CURRICULUM    Exibe meu curriculo
+CLEAR         Limpa a tela
+      `,
+
+      "?": `
+ABOUT         Exibe informacoes sobre mim
+SKILLS        Exibe as skills que eu domino
+CONTACT       Exibe as informacoes de contato
+SOCIAL        Exibe as minhas rede sociais
+CURRICULUM    Exibe meu curriculo
+CLEAR         Limpa a tela
       `,
 
       about: `
@@ -132,9 +141,13 @@ https://linkedin.com/in/tiagonlaureano
       curriculo: `
 https://cv.tiagonl.dev.br
       `,
-    }
 
-    if (cmd === 'clear') {
+      curriculum: `
+https://cv.tiagonl.dev.br
+      `,
+    };
+
+    if ((cmd === 'clear') || (cmd === 'cls')) {
       setHistory([
         {
           type: 'text',
@@ -145,6 +158,21 @@ https://cv.tiagonl.dev.br
 
       return
     }
+
+    
+    if (cmd === 'close') {
+      setHistory([
+        {
+          type: 'text',
+          content:
+            'Digite "help" para começar.'
+        }
+      ])
+                setOpen(false)
+      return
+    }
+
+
 
     setHistory((prev) => [
       ...prev,
@@ -168,7 +196,7 @@ https://cv.tiagonl.dev.br
 
     if (!input.trim()) return
 
-    handleCommand(input)
+handleCommand(input.toLowerCase());
 
     setInput('')
   }

@@ -104,6 +104,7 @@ export default function Hero() {
           opacity: 1,
           y: 0
         }}
+        style={{overflow: "hidden"}}
       >
         <span className={styles.badge}>
           Full Stack Developer

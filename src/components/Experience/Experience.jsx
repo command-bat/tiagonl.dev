@@ -27,10 +27,9 @@ export default function Experience() {
   const [selected, setSelected] = useState(0)
 
   return (
-    <section
-      id="experience"
-      className={styles.wrapper}
-    >
+    <section id="experience" className={styles.wrapper}>
+      <h2 className={styles.title}>Formação</h2>
+
       <div className={styles.card}>
         <div className={styles.left}>
           <Image
@@ -38,21 +37,15 @@ export default function Experience() {
             width={130}
             height={130}
             alt="School"
-            style={{borderRadius: "100%"}}
+            style={{ borderRadius: "100%" }}
           />
 
           <div>
-            <h2>
-              {schools[selected].title}
-            </h2>
+            <h2>{schools[selected].title}</h2>
 
-            <span>
-              {schools[selected].date}
-            </span>
+            <span>{schools[selected].date}</span>
 
-            <p>
-              {schools[selected].desc}
-            </p>
+            <p>{schools[selected].desc}</p>
           </div>
         </div>
 
@@ -60,18 +53,12 @@ export default function Experience() {
           {schools.map((item, index) => (
             <button
               key={index}
-              onClick={() =>
-                setSelected(index)
-              }
-              className={
-                selected === index
-                  ? styles.active
-                  : ''
-              }
+              onClick={() => setSelected(index)}
+              className={selected === index ? styles.active : ""}
             />
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
