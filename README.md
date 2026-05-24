@@ -60,7 +60,7 @@ npm run dev
 
 ---
 
-<!-- PORTFOLIO_DATA_START -->
+<!-- PORTFOLIO_DATA_START 
 {
   "image": "https://tiagonl.com.br/fatec.png",
   "tags": [
@@ -74,4 +74,4 @@ npm run dev
   ],
   "featured": true
 }
-<!-- PORTFOLIO_DATA_END -->
+PORTFOLIO_DATA_END -->
