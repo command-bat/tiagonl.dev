@@ -1,11 +1,8 @@
-
-
 ---
 
 # Portifólio **tiagonl.dev.br**
 
 ```md
-# tiagonl.dev.br
 
 Projeto de portfólio pessoal desenvolvido para apresentar projetos, habilidades e experiências de forma moderna e responsiva.
 
@@ -46,7 +43,7 @@ npm run dev
         "Next.js",
         "React",
         "HTML",
-        "CSS",
+        "CSS"
     ]
 }
  PORTFOLIO_DATA_END -->
