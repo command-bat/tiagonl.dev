@@ -172,7 +172,7 @@
 
     left: 50%;
 
-    transform: translateX(-50%);
+    transform: translateX(-50%) !important;
 
     padding: 8px 12px;
 
