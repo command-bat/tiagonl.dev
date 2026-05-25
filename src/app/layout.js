@@ -92,11 +92,11 @@ Focado em desenvolvimento web, automações e aplicações em tempo real.`,
   },
 
   icons: {
-    icon: '/favicon.ico',
+    icon: "/img/icon_tiagonl.ico",
 
-    shortcut: '/favicon.ico',
+    shortcut: "/img/icon_tiagonl.ico",
 
-    apple: '/favicon.ico',
+    apple: "/img/icon_tiagonl.ico",
   },
 }
 
