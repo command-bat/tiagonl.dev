@@ -127,7 +127,7 @@ Git/GitHub
 
       contact: `
 Email:
-tiagolaure@gmail.com
+contato@tiagonl.dev.br
       `,
 
       social: `

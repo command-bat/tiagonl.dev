@@ -15,7 +15,7 @@ export default function Contact() {
 
       <div className={styles.grid}>
         <a
-          href="mailto:tiagolaure@gmail.com"
+          href="mailto:contato@tiagonl.dev.br"
           className={styles.card}
         >
           <FaEnvelope />
