@@ -1,6 +1,7 @@
 import './globals.css'
 
 import { ThemeProvider } from '@/context/ThemeProvider'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   metadataBase: new URL(
