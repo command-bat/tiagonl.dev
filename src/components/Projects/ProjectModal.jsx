@@ -35,7 +35,6 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
 
-            {console.log(project.readme)}
 
             {typeof project.readme === "string" && project.readme.trim() ? (
               <div className={styles.readme}>

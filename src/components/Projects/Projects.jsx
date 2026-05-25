@@ -74,7 +74,6 @@ useEffect(() => {
       if (cancelled) return;
 
       setData(json);
-      console.log(json.projects[5].readme);
 
       const hash = window.location.hash.replace("#", "").toLowerCase();
 
