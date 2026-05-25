@@ -71,7 +71,7 @@ export default function Hero() {
   }, [displayed, isMobile]);
 
   return (
-    <section className={styles.hero}>
+    <section id="hero" className={styles.hero}>
       <motion.div
         initial={{
           opacity: 0,

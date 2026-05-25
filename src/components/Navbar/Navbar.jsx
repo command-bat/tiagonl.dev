@@ -15,7 +15,8 @@ export default function Navbar({ hasProjects }) {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logoArea}>
+      <div className={styles.logoArea}
+        onClick={() => { window.location = '#hero' }}>
         <Image
           src="/icon_tiagonl.png"
           width={42}
