@@ -28,13 +28,48 @@ export default function Navbar({ hasProjects }) {
       </div>
 
       <nav className={open ? styles.open : ""}>
-        <a href="#about">Sobre</a>
-        <a href="#skills">Skills</a>
+        <a
+          href="#about"
+          onClick={() => {
+            open ? setOpen(false) : "";
+          }}
+        >
+          Sobre
+        </a>
+        <a
+          href="#skills"
+          onClick={() => {
+            open ? setOpen(false) : "";
+          }}
+        >
+          Skills
+        </a>
         {hasProjects && (
-        <a href="#projects">Projetos</a>
+          <a
+            href="#projects"
+            onClick={() => {
+              open ? setOpen(false) : "";
+            }}
+          >
+            Projetos
+          </a>
         )}
-        <a href="#experience">Formação</a>
-        <a href="#contact">Contato</a>
+        <a
+          href="#experience"
+          onClick={() => {
+            open ? setOpen(false) : "";
+          }}
+        >
+          Formação
+        </a>
+        <a
+          href="#contact"
+          onClick={() => {
+            open ? setOpen(false) : "";
+          }}
+        >
+          Contato
+        </a>
         <div className={styles.mobileSocials}>
           <a href="https://github.com/command-bat" target="_blank">
             <FaGithub />
