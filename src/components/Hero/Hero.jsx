@@ -1,133 +1,103 @@
-'use client'
+"use client";
 
-import styles from './Hero.module.css'
+import styles from "./Hero.module.css";
 
-import {
-  useEffect,
-  useState
-} from 'react'
+import { useEffect, useState } from "react";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
-const words = [
-  '     Nascimento',
-  '     Laureano'
-]
+const words = ["     Nascimento", "     Laureano"];
 
 export default function Hero() {
-  const [wordIndex, setWordIndex] =
-    useState(0)
+  const [wordIndex, setWordIndex] = useState(0);
 
-  const [displayed, setDisplayed] =
-    useState('')
+  const [displayed, setDisplayed] = useState("");
 
-  const [isDeleting, setIsDeleting] =
-    useState(false)
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  const [isMobile, setIsMobile] =
-    useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const check = () => {
-      setIsMobile(window.innerWidth < 900)
-    }
+      setIsMobile(window.innerWidth < 900);
+    };
 
-    check()
+    check();
 
-    window.addEventListener(
-      'resize',
-      check
-    )
+    window.addEventListener("resize", check);
 
-    return () =>
-      window.removeEventListener(
-        'resize',
-        check
-      )
-  }, [])
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
-    if (isMobile) return
+    if (isMobile) return;
 
-    const current = words[wordIndex]
+    const current = words[wordIndex];
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setDisplayed(
-          current.substring(
-            0,
-            displayed.length + 1
-          )
-        )
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          setDisplayed(current.substring(0, displayed.length + 1));
 
-        if (displayed === current) {
-          setTimeout(() => {
-            setIsDeleting(true)
-          }, 1200)
+          if (displayed === current) {
+            setTimeout(() => {
+              setIsDeleting(true);
+            }, 1200);
+          }
+        } else {
+          setDisplayed(current.substring(0, displayed.length - 1));
+
+          if (displayed === "") {
+            setIsDeleting(false);
+
+            setWordIndex((prev) => (prev === words.length - 1 ? 0 : prev + 1));
+          }
         }
-      } else {
-        setDisplayed(
-          current.substring(
-            0,
-            displayed.length - 1
-          )
-        )
+      },
+      isDeleting ? 60 : 120,
+    );
 
-        if (displayed === '') {
-          setIsDeleting(false)
+    return () => clearTimeout(timeout);
+  }, [displayed, isDeleting, wordIndex, isMobile]);
 
-          setWordIndex((prev) =>
-            prev === words.length - 1
-              ? 0
-              : prev + 1
-          )
-        }
-      }
-    }, isDeleting ? 60 : 120)
+  useEffect(() => {
+    if (isMobile) {
+      document.title = "Tiago NL | Developer";
 
-    return () => clearTimeout(timeout)
-  }, [
-    displayed,
-    isDeleting,
-    wordIndex,
-    isMobile
-  ])
+      return;
+    }
+
+    document.title = `Tiago${displayed} | Developer`;
+  }, [displayed, isMobile]);
 
   return (
     <section className={styles.hero}>
       <motion.div
         initial={{
           opacity: 0,
-          y: 40
+          y: 40,
         }}
         animate={{
           opacity: 1,
-          y: 0
+          y: 0,
         }}
-        style={{overflow: "hidden"}}
+        style={{ overflow: "hidden" }}
       >
-        <span className={styles.badge}>
-          Full Stack Developer
-        </span>
+        <span className={styles.badge}>Full Stack Developer</span>
 
         <h1>
-          Tiago 
-
+          Tiago
           <br />
-
           <span>
-            {isMobile
-              ? 'NL'
-              : displayed}
+            {isMobile ? "NL" : displayed}
 
             {!isMobile && <b>|</b>}
           </span>
         </h1>
 
         <p>
-          Desenvolvendo sistemas modernos,
-          experiências interativas e
-          aplicações realtime.
+          Desenvolvendo sistemas modernos, experiências interativas e aplicações
+          realtime.
         </p>
 
         <div className={styles.buttons}>
@@ -145,5 +115,5 @@ export default function Hero() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }
