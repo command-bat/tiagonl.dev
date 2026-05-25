@@ -433,6 +433,7 @@ const filteredProjects =
                       }
                     }}
                   >
+                    <div>
                     <h3>{project.title}</h3>
 
                     <p>{project.description}</p>
@@ -442,6 +443,7 @@ const filteredProjects =
                         <span key={tag}>{tag}</span>
                       ))}
                     </div>
+                      </div>
 
                     <div className={styles.links}>
                       {project.site && (

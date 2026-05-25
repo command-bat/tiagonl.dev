@@ -177,6 +177,10 @@
 
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
