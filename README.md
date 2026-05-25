@@ -1,4 +1,9 @@
-# tiagonl.dev.br
+
+---
+
+# Portifólio tiagonl.dev.br
+
+```md
 
 Projeto de portfólio pessoal desenvolvido para apresentar projetos, habilidades e experiências de forma moderna e responsiva.
 
@@ -34,12 +39,12 @@ npm run dev
 { 
     "title": "tiagonl.dev.br",
     "fullDescription": "Portfólio pessoal desenvolvido com Next.js para apresentação de projetos, habilidades e experiências. O projeto foca em performance, design moderno e experiência do usuário, servindo como hub central de toda a minha presença como desenvolvedor.",
-    "image": "https://tiagonl.com.br/icon_tiagonl.png",
+    "image": "https://tiagonl.dev.br/img/icon_tiagonl.png",
     "tags": [
         "Next.js",
         "React",
         "HTML",
-        "CSS",
+        "CSS"
     ]
 }
  PORTFOLIO_DATA_END -->
