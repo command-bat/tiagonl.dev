@@ -110,6 +110,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        <SpeedInsights />
         <ThemeProvider>
           {children}
         </ThemeProvider>
